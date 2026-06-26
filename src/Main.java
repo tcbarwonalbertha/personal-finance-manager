@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+     displayWelcomeMessage();
 
         String appName = "Personal Finance Manager";
-        System.out.println(appName);
+        displayMessage(appName);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -26,7 +27,17 @@ public class Main {
 
         } else {
             System.out.println("income needs improvement");
+
         }
+        }
+
+    private static void displayMessage(String message) {
+        System.out.println("Message");
+    }
+
+    public static  void displayWelcomeMessage(){
+        System.out.println("welcome to Personal Finance Manger");
+
         }
 
     }

@@ -44,9 +44,23 @@ The goal of this project is to build a Personal Finance Manager application that
 * Learned `else if` statements
 * Built a simple income evaluation program
 
+### Version 0.3
+- Learned methods
+- Created reusable methods
+- Learned method parameters
+
+## Current Features
+
+* Display welcome message
+* Display application title
+* Accept user input using Scanner
+* Store data using variables
+* Evaluate income using conditional statements (`if`, `else if`, `else`)
+* Organize code using methods
+* Use method parameters
+
 ## Future Features
 
-* Methods
 * Loops
 * Classes and Objects
 * Transaction management
@@ -57,6 +71,7 @@ The goal of this project is to build a Personal Finance Manager application that
 * Database integration
 * JavaFX desktop interface
 * Mobile application support
+
 
 ## Author
 
