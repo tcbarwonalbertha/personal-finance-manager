@@ -15,10 +15,16 @@ The goal of this project is to build a Personal Finance Manager application that
 
 ## Current Features
 
+* Display welcome message
 * Display application title
 * Accept user input using Scanner
 * Store data using variables
 * Evaluate income using conditional statements (`if`, `else if`, `else`)
+* Organize code using methods
+* Use method parameters
+* Return values from methods
+* Repeat code using a `while` loop
+* Increase number values using the increment operator (`++`)
 
 ## Technologies
 
@@ -45,24 +51,21 @@ The goal of this project is to build a Personal Finance Manager application that
 * Built a simple income evaluation program
 
 ### Version 0.3
-- Learned methods
-- Created reusable methods
-- Learned method parameters
 
-## Current Features
+* Learned methods
+* Created reusable methods
+* Learned method parameters
 
-* Display welcome message
-* Display application title
-* Accept user input using Scanner
-* Store data using variables
-* Evaluate income using conditional statements (`if`, `else if`, `else`)
-* Organize code using methods
-* Use method parameters
+### Version 0.4
+
+* Learned methods with return values
+* Learned `while` loops
+* Practiced the increment operator (`++`)
 
 ## Future Features
 
-* Loops
-* Classes and Objects
+* Menu system
+* Classes and objects
 * Transaction management
 * Income tracking
 * Expense tracking
@@ -71,7 +74,6 @@ The goal of this project is to build a Personal Finance Manager application that
 * Database integration
 * JavaFX desktop interface
 * Mobile application support
-
 
 ## Author
 
