@@ -3,7 +3,13 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-     displayWelcomeMessage();
+        int number = 1;
+
+        while (number <= 5) {
+            System.out.println("Count: " + number);
+            number++;
+        }
+        displayWelcomeMessage();
 
         String appName = "Personal Finance Manager";
         displayMessage(appName);
@@ -20,24 +26,26 @@ public class Main {
 
         System.out.println("Your income is: " + income);
 
-        if (income > 5000) {
-            System.out.println("High income");
-        } else  if (income > 2500){
-            System.out.println("Income is Good");
-
-        } else {
-            System.out.println("income needs improvement");
-
-        }
-        }
+        String incomeMessage = evaluateIncome(income);
+        System.out.println(incomeMessage);
+    }
 
     private static void displayMessage(String message) {
-        System.out.println("Message");
+        System.out.println(message);
     }
 
-    public static  void displayWelcomeMessage(){
-        System.out.println("welcome to Personal Finance Manger");
+    private static String evaluateIncome(double income) {
 
+        if (income > 5000) {
+            return "High income";
+        } else if (income > 2500) {
+            return "Income is Good";
+        } else {
+            return "Income needs improvement";
         }
-
     }
+
+    public static void displayWelcomeMessage() {
+        System.out.println("Welcome to Personal Finance Manager");
+    }
+}
