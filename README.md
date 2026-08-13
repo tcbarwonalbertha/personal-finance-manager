@@ -25,6 +25,10 @@ The goal of this project is to build a Personal Finance Manager application that
 * Return values from methods
 * Repeat code using a `while` loop
 * Increase number values using the increment operator (`++`)
+* Display an interactive finance menu
+* Accept menu choices from the user
+* Control the menu loop using a boolean variable
+* Exit the menu when the user selects option 4
 
 ## Technologies
 
@@ -62,9 +66,20 @@ The goal of this project is to build a Personal Finance Manager application that
 * Learned `while` loops
 * Practiced the increment operator (`++`)
 
+### Version 0.5
+
+* Learned the `boolean` data type
+* Used a boolean variable to control a loop
+* Created an interactive menu using a `while` loop
+* Accepted menu choices using `scanner.nextInt()`
+* Learned the difference between `=` and `==`
+* Added an Exit option to stop the menu loop
+
 ## Future Features
 
-* Menu system
+* Make Add Income menu option functional
+* Make Add Expense menu option functional
+* Make View Balance menu option functional
 * Classes and objects
 * Transaction management
 * Income tracking

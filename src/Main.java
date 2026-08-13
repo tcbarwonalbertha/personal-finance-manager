@@ -3,12 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int number = 1;
 
-        while (number <= 5) {
-            System.out.println("Count: " + number);
-            number++;
-        }
         displayWelcomeMessage();
 
         String appName = "Personal Finance Manager";
@@ -28,6 +23,23 @@ public class Main {
 
         String incomeMessage = evaluateIncome(income);
         System.out.println(incomeMessage);
+
+        boolean running = true;
+
+        while (running) {
+
+            System.out.println("1. Add Income");
+            System.out.println("2. Add Expense");
+            System.out.println("3. View Balance");
+            System.out.println("4. Exit");
+
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+
+            if (choice == 4) {
+                running = false;
+            }
+        }
     }
 
     private static void displayMessage(String message) {
