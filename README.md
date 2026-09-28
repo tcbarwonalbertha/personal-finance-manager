@@ -28,7 +28,12 @@ The goal of this project is to build a Personal Finance Manager application that
 * Display an interactive finance menu
 * Accept menu choices from the user
 * Control the menu loop using a boolean variable
-* Exit the menu when the user selects option 4
+* Add income
+* Add expenses
+* View current balance
+* Handle invalid menu choices
+* Exit the application through the menu
+* Display an exit message
 
 ## Technologies
 
@@ -75,15 +80,24 @@ The goal of this project is to build a Personal Finance Manager application that
 * Learned the difference between `=` and `==`
 * Added an Exit option to stop the menu loop
 
+### Version 0.6
+
+* Made the Add Income option functional
+* Made the Add Expense option functional
+* Made the View Balance option functional
+* Added balance tracking
+* Separated income from balance
+* Added handling for invalid menu choices
+* Added an exit message
+* Created a reusable `displayMenu()` method
+* Learned more about variable scope
+* Practiced using `if`, `else if`, and `else` for menu choices
+
 ## Future Features
 
-* Make Add Income menu option functional
-* Make Add Expense menu option functional
-* Make View Balance menu option functional
 * Classes and objects
 * Transaction management
-* Income tracking
-* Expense tracking
+* Categorize transactions
 * Budget management
 * File storage
 * Database integration

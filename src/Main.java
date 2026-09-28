@@ -4,7 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+
         displayWelcomeMessage();
+
 
         String appName = "Personal Finance Manager";
         displayMessage(appName);
@@ -28,18 +30,47 @@ public class Main {
 
         while (running) {
 
-            System.out.println("1. Add Income");
-            System.out.println("2. Add Expense");
-            System.out.println("3. View Balance");
-            System.out.println("4. Exit");
+
+
 
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
 
-            if (choice == 4) {
+            double balance = income ;
+            if (choice == 1) {
+                System.out.println("Enter income amount: ");
+                double amount = scanner.nextDouble();
+                balance = income;
+                income = income + amount;
+
+
+                System.out.println("Updated income: " + income);
+
+            } else if (choice == 2) {
+                System.out.println("Enter expense amount: ");
+                double expense = scanner.nextDouble();
+
+                balance = balance - expense;
+                System.out.println("Remaining balance: " + balance);
+
+            } else if (choice == 3) {
+                System.out.println("Current balance: " + balance);
+
+            } else if (choice == 4) {
+                System.out.println("Thank you for using Personal Finance Manager");
                 running = false;
+
+            } else {
+                System.out.println("Invalid option. Please choose 1-4.");
             }
         }
+    }
+    private  static void displayMenu(){
+        System.out.println("1. Add Income");
+        System.out.println("2. Add Expense");
+        System.out.println("3. View Balance");
+        System.out.println("4. Exit");
+
     }
 
     private static void displayMessage(String message) {
@@ -61,3 +92,4 @@ public class Main {
         System.out.println("Welcome to Personal Finance Manager");
     }
 }
+
