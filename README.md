@@ -24,16 +24,18 @@ The goal of this project is to build a Personal Finance Manager application that
 * Use method parameters
 * Return values from methods
 * Repeat code using a `while` loop
-* Increase number values using the increment operator (`++`)
+* Control the application using a boolean variable
 * Display an interactive finance menu
-* Accept menu choices from the user
-* Control the menu loop using a boolean variable
 * Add income
 * Add expenses
 * View current balance
+* Create income and expense transaction objects
+* Store multiple transactions using an `ArrayList`
+* View transaction history
+* Read transaction data using getter methods
+* Process stored transactions using an enhanced `for` loop
 * Handle invalid menu choices
 * Exit the application through the menu
-* Display an exit message
 
 ## Technologies
 
@@ -93,13 +95,33 @@ The goal of this project is to build a Personal Finance Manager application that
 * Learned more about variable scope
 * Practiced using `if`, `else if`, and `else` for menu choices
 
+### Version 0.7
+
+* Created a separate `Transaction` class
+* Learned the difference between a class and an object
+* Created private fields for transaction amount and type
+* Learned how constructors initialize objects
+* Learned how `this` refers to the current object
+* Created getter methods for private fields
+* Created `Transaction` objects using `new`
+* Learned about `ArrayList`
+* Created an `ArrayList<Transaction>` to store transactions
+* Used `.add()` to store transaction objects
+* Stored starting income as a transaction
+* Stored additional income transactions
+* Stored expense transactions
+* Learned the enhanced `for` loop
+* Used an enhanced `for` loop to process stored transactions
+* Added a View Transactions menu option
+* Displayed transaction history using getter methods
+
 ## Future Features
 
-* Classes and objects
-* Transaction management
-* Categorize transactions
+* Transaction categories
+* Improved transaction management
 * Budget management
 * File storage
+* Save and load financial data
 * Database integration
 * JavaFX desktop interface
 * Mobile application support
