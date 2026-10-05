@@ -115,9 +115,22 @@ The goal of this project is to build a Personal Finance Manager application that
 * Added a View Transactions menu option
 * Displayed transaction history using getter methods
 
+### Version 0.8
+
+* Added transaction categories
+* Added a `category` field to the `Transaction` class
+* Updated the `Transaction` constructor to accept a category
+* Learned how `this.category = category` stores the constructor parameter in the object
+* Created a `getCategory()` getter method
+* Added user input for income categories
+* Added user input for expense categories
+* Stored categories with income and expense transactions
+* Displayed categories in transaction history
+* Learned how `scanner.nextLine()` clears the leftover Enter after `scanner.nextDouble()`
+* Practiced storing and retrieving additional data from objects
+
 ## Future Features
 
-* Transaction categories
 * Improved transaction management
 * Budget management
 * File storage

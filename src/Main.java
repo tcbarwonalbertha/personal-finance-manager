@@ -26,10 +26,10 @@ public class Main {
         // Starting balance is the user's starting income
         double balance = income;
 
-        // Create a Transaction object for the starting income
-        Transaction incomeTransaction = new Transaction(income, "Income");
+        // Create and store the starting income transaction
+        Transaction incomeTransaction =
+                new Transaction(income, "Income", "Salary");
 
-        // Store the starting transaction in the ArrayList
         transactions.add(incomeTransaction);
 
         System.out.println("Your income is: " + income);
@@ -41,51 +41,62 @@ public class Main {
 
         while (running) {
 
-            // Display the menu each time the loop runs
             displayMenu();
 
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
 
+            // OPTION 1 - ADD INCOME
             if (choice == 1) {
 
                 System.out.print("Enter income amount: ");
                 double amount = scanner.nextDouble();
 
-                // Create and store the new income transaction
-                Transaction newIncome = new Transaction(amount, "Income");
+                // Clear the Enter left behind by nextDouble()
+                scanner.nextLine();
+
+                System.out.print("Enter income category: ");
+                String category = scanner.nextLine();
+
+                // Create and store the income transaction
+                Transaction newIncome =
+                        new Transaction(amount, "Income", category);
+
                 transactions.add(newIncome);
 
-                for (Transaction transaction : transactions) {
-                    System.out.println(
-                            transaction.getType() + ": " + transaction.getAmount()
-                    );
-                }
-
-                // Increase both total income and available balance
                 income = income + amount;
                 balance = balance + amount;
 
                 System.out.println("Updated income: " + income);
 
+                // OPTION 2 - ADD EXPENSE
             } else if (choice == 2) {
 
                 System.out.print("Enter expense amount: ");
                 double expense = scanner.nextDouble();
 
-                // Create and store the new expense transaction
-                Transaction newExpense = new Transaction(expense, "Expense");
+                // Clear the Enter left behind by nextDouble()
+                scanner.nextLine();
+
+                System.out.print("Enter expense category: ");
+                String category = scanner.nextLine();
+
+                // Create and store the expense transaction
+                Transaction newExpense =
+                        new Transaction(expense, "Expense", category);
+
                 transactions.add(newExpense);
 
-                // Expenses reduce the available balance
                 balance = balance - expense;
 
                 System.out.println("Remaining balance: " + balance);
 
+                // OPTION 3 - VIEW BALANCE
             } else if (choice == 3) {
 
                 System.out.println("Current balance: " + balance);
 
+                // OPTION 4 - EXIT
             } else if (choice == 4) {
 
                 System.out.println(
@@ -94,16 +105,18 @@ public class Main {
 
                 running = false;
 
+                // OPTION 5 - VIEW TRANSACTIONS
             } else if (choice == 5) {
 
                 System.out.println("Transaction History:");
 
-                // Go through every Transaction stored in the ArrayList
                 for (Transaction transaction : transactions) {
 
                     System.out.println(
                             transaction.getType() + ": "
                                     + transaction.getAmount()
+                                    + " - Category: "
+                                    + transaction.getCategory()
                     );
                 }
 
