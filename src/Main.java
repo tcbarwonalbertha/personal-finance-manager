@@ -15,13 +15,39 @@ public class Main {
         // Stores all Transaction objects
         ArrayList<Transaction> transactions = new ArrayList<>();
 
+        // USER NAME
         System.out.print("Enter your name: ");
         String name = scanner.nextLine();
 
         System.out.println("Hello " + name);
 
+        // STARTING MONTHLY INCOME
         System.out.print("Enter your monthly income: ");
+
+        // Check that the user enters a number
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a number:");
+            scanner.next();
+        }
+
         double income = scanner.nextDouble();
+
+        // Check that the starting income is greater than 0
+        while (income <= 0) {
+
+            System.out.println(
+                    "Income must be greater than 0. Please enter again:"
+            );
+
+            while (!scanner.hasNextDouble()) {
+                System.out.println(
+                        "Invalid input. Please enter a number:"
+                );
+                scanner.next();
+            }
+
+            income = scanner.nextDouble();
+        }
 
         // Starting balance is the user's starting income
         double balance = income;
@@ -43,14 +69,50 @@ public class Main {
 
             displayMenu();
 
+            // MENU INPUT VALIDATION
             System.out.print("Choose an option: ");
+
+            // Check that the menu input is a whole number
+            while (!scanner.hasNextInt()) {
+                System.out.println(
+                        "Invalid input. Please enter a number from 1 to 5:"
+                );
+                scanner.next();
+            }
+
             int choice = scanner.nextInt();
 
             // OPTION 1 - ADD INCOME
             if (choice == 1) {
 
                 System.out.print("Enter income amount: ");
+
+                // Check that the user enters a number
+                while (!scanner.hasNextDouble()) {
+                    System.out.println(
+                            "Invalid input. Please enter a number:"
+                    );
+                    scanner.next();
+                }
+
                 double amount = scanner.nextDouble();
+
+                // Check that the income amount is greater than 0
+                while (amount <= 0) {
+
+                    System.out.println(
+                            "Amount must be greater than 0. Please enter again:"
+                    );
+
+                    while (!scanner.hasNextDouble()) {
+                        System.out.println(
+                                "Invalid input. Please enter a number:"
+                        );
+                        scanner.next();
+                    }
+
+                    amount = scanner.nextDouble();
+                }
 
                 // Clear the Enter left behind by nextDouble()
                 scanner.nextLine();
@@ -73,7 +135,73 @@ public class Main {
             } else if (choice == 2) {
 
                 System.out.print("Enter expense amount: ");
+
+                // Check that the user enters a number
+                while (!scanner.hasNextDouble()) {
+                    System.out.println(
+                            "Invalid input. Please enter a number:"
+                    );
+                    scanner.next();
+                }
+
                 double expense = scanner.nextDouble();
+
+                // Check that the expense is greater than 0
+                while (expense <= 0) {
+
+                    System.out.println(
+                            "Amount must be greater than 0. Please enter again:"
+                    );
+
+                    while (!scanner.hasNextDouble()) {
+                        System.out.println(
+                                "Invalid input. Please enter a number:"
+                        );
+                        scanner.next();
+                    }
+
+                    expense = scanner.nextDouble();
+                }
+
+                // Check that expense does not exceed the balance
+                while (expense > balance) {
+
+                    System.out.println(
+                            "Insufficient balance. Your current balance is: "
+                                    + balance
+                    );
+
+                    System.out.println(
+                            "Please enter a smaller expense amount:"
+                    );
+
+                    // Check that the new input is a number
+                    while (!scanner.hasNextDouble()) {
+                        System.out.println(
+                                "Invalid input. Please enter a number:"
+                        );
+                        scanner.next();
+                    }
+
+                    expense = scanner.nextDouble();
+
+                    // Check that the new expense is greater than 0
+                    while (expense <= 0) {
+
+                        System.out.println(
+                                "Amount must be greater than 0. Please enter again:"
+                        );
+
+                        while (!scanner.hasNextDouble()) {
+                            System.out.println(
+                                    "Invalid input. Please enter a number:"
+                            );
+                            scanner.next();
+                        }
+
+                        expense = scanner.nextDouble();
+                    }
+                }
 
                 // Clear the Enter left behind by nextDouble()
                 scanner.nextLine();
@@ -89,12 +217,16 @@ public class Main {
 
                 balance = balance - expense;
 
-                System.out.println("Remaining balance: " + balance);
+                System.out.println(
+                        "Remaining balance: " + balance
+                );
 
                 // OPTION 3 - VIEW BALANCE
             } else if (choice == 3) {
 
-                System.out.println("Current balance: " + balance);
+                System.out.println(
+                        "Current balance: " + balance
+                );
 
                 // OPTION 4 - EXIT
             } else if (choice == 4) {
@@ -127,9 +259,12 @@ public class Main {
                 );
             }
         }
+
+        scanner.close();
     }
 
     private static void displayMenu() {
+
         System.out.println("1. Add Income");
         System.out.println("2. Add Expense");
         System.out.println("3. View Balance");
@@ -138,6 +273,7 @@ public class Main {
     }
 
     private static void displayMessage(String message) {
+
         System.out.println(message);
     }
 
@@ -145,14 +281,19 @@ public class Main {
 
         if (income > 5000) {
             return "High income";
+
         } else if (income > 2500) {
             return "Income is Good";
+
         } else {
             return "Income needs improvement";
         }
     }
 
     public static void displayWelcomeMessage() {
-        System.out.println("Welcome to Personal Finance Manager");
+
+        System.out.println(
+                "Welcome to Personal Finance Manager"
+        );
     }
 }
